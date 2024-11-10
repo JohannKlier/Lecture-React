@@ -1,0 +1,9 @@
+.plot-container {
+    height:600px;
+    width:100%;
+  }
+
+.slider {
+    display:flex;
+    width: 150px;
+}
