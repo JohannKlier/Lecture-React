@@ -3,6 +3,8 @@ import Plot from 'react-plotly.js';
 import { create, all } from 'mathjs';
 import './App.css';
 import { Tabs, Tab, Box, Typography } from '@mui/material';
+import { BlockMath, InlineMath } from 'react-katex';
+import 'katex/dist/katex.min.css';
 
 const math = create(all);
 
@@ -57,8 +59,8 @@ function App() {
 
   return (
     <div style={{ textAlign: 'center' }}>
-      <h2>Production Function Visualization</h2>
-      <div>{data.y_axis}}</div>
+      <h2>Produktionsfunktion vom Typ A</h2>
+      <BlockMath math={`a r^3 + b r^2 + c r`} />
       {/* Sliders for a, b, and c */}
       <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginBottom: '20px' }}>
         <div>
@@ -210,6 +212,9 @@ function App() {
         useResizeHandler
         className="plot-container"
       />
+      <div>
+        <h2>Berechnung der Phasengrenzen</h2>
+      </div>
       {/* Tabs Section */}
       <Box sx={{ width: '100%', bgcolor: 'background.paper', marginTop: 3 }}>
         <Tabs value={tabIndex} onChange={handleTabChange} centered>
@@ -220,24 +225,26 @@ function App() {
         {tabIndex === 0 && (
           <Box p={3}>
             <Typography variant="h6">Maximum der Grenzproduktivität</Typography>
-            <Typography>Explanation of the Ertragskurve:</Typography>
-            <Typography variant="body1">x = {a} * r^3 + {b} * r^2 + {c} * r</Typography>
+            <Typography>Ertragskurve:</Typography>
+            <BlockMath math={`x = ${a} r^3 + ${b} r^2 + ${c} r`} />
+            <Typography>Grenzproduktivität:</Typography>
+            <BlockMath math={`x' = \\frac{dx}{dr} = 3${a} r^2 + 2${b} r + ${c}`} />
           </Box>
         )}
         {tabIndex === 1 && (
           <Box p={3}>
             <Typography variant="h6">Maximum des Durchschnittsertrags</Typography>
-            <Typography>Explanation of the Durchschnittsertrag:</Typography>
-            <Typography variant="body1">e = (x / r) = {a} * r^3 + {b} * r^2 + {c} * r / r</Typography>
+            <Typography>Durchschnittsertrag:</Typography>
+            <BlockMath math={`e = \\frac{x}{r} = \\frac{${a} r^3 + ${b} r^2 + ${c} r}{r}`} />
           </Box>
         )}
         {tabIndex === 2 && (
           <Box p={3}>
             <Typography variant="h6">Maximum der Ertragskurve</Typography>
-            <Typography>Explanation of the conditions for an extremum:</Typography>
-            <Typography variant="body1">
-              Necessary Condition: x' = dx/dr = 3 * {a} * r^2 + 2 * {b} * r + {c} = 0
-            </Typography>
+            <Typography>Notwendige Bedingung für ein Extremum:</Typography>
+            <BlockMath math={`x' = \\frac{dx}{dr} = 3${a} r^2 + 2${b} r + ${c} = 0`} />
+            <Typography>Lösung der quadratischen Gleichung:</Typography>
+            <BlockMath math={`r = -\\frac{p}{2} \\pm \\sqrt{\\frac{p^2}{4} - q}`} />
           </Box>
         )}
       </Box>
