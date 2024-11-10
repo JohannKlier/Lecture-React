@@ -1,9 +1,83 @@
 
 /* App.css */
 
-.App {
+.app {
   display: flex;
-  width:100%;
-  
+  min-height: 100vh;
+  background-color: #f4f6f8; /* Soft background color for the main app */
+}
+
+.main-section {
+  text-align: center; /* Center-align content within the main section */
+}
+
+.main-section h1 {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Additional styling for the Paper container */
+.MuiPaper-root {
+  background-color: #ffffff;
+  padding: 2rem;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar-related styling for better distinction */
+.sidebar {
+  width: 240px; /* Adjust as needed */
+  background-color: #3f51b5;
+  color: white;
+  padding: 20px;
+}
+
+/* Typography tweaks for a more polished look */
+h4 {
+  color: #444;
+  font-size: 1.8rem;
+  margin-top: 0;
+}
+
+p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 960px) {
+  .app {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+  .MuiPaper-root {
+    padding: 1rem;
+  }
+}
+
+/* App.css */
+
+.main-headline {
+  font-family: 'Playfair Display', serif; /* Use the custom font */
+  font-size: 2.5rem; /* Larger font size */
+  color: #2c3e50; /* Darker color */
+  margin: 20px 0;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+}
+
+.main-headline::after {
+  content: '';
+  display: block;
+  width: 300px;
+  height: 4px;
+  background-color: #1e1e2f; /* Accent color */
+  margin: 8px auto 0;
+  border-radius: 2px;
 }
 
