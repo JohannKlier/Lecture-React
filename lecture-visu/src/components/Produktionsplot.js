@@ -1,8 +1,9 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
 
-function ProductionPlot({ data, tabIndex }) {
+function ProductionPlot({ data, tabIndex, calculation }) {
   return (
+    
     <Plot
       data={[
         {
@@ -11,7 +12,7 @@ function ProductionPlot({ data, tabIndex }) {
           type: 'scatter',
           mode: 'lines',
           name: 'Ertragsfunktion',
-          line: { color: 'green' }
+          line: { color: (tabIndex === 2 || !calculation)  ? 'green' : 'gray' }
         },
         {
           x: data.rValues,
@@ -19,7 +20,7 @@ function ProductionPlot({ data, tabIndex }) {
           type: 'scatter',
           mode: 'lines',
           name: 'Grenzproduktivität',
-          line: { color: 'red' }
+          line: { color: (tabIndex  === 0 || !calculation)  ? 'red' : 'gray' }
         },
         {
           x: data.rValues,
@@ -27,7 +28,7 @@ function ProductionPlot({ data, tabIndex }) {
           type: 'scatter',
           mode: 'lines',
           name: 'GrenzproduktivitätI',
-          line: { color: 'orange' }
+          line: { color: !calculation  ? 'orange' : 'gray' }
         },
         {
           x: data.rValues,
@@ -35,7 +36,7 @@ function ProductionPlot({ data, tabIndex }) {
           type: 'scatter',
           mode: 'lines',
           name: 'Durchschnittsertrag',
-          line: { color: 'blue' }
+          line: { color: (tabIndex  === 1 || !calculation)  ? 'blue' : 'gray'  }
         },
         {
           x: data.x_values,
@@ -55,7 +56,7 @@ function ProductionPlot({ data, tabIndex }) {
           mode: 'lines',
           name: 'Phase I Line',
           legendgroup: "phases",
-          line: { color: tabIndex === 0 ? 'red' : 'gray', dash: 'dash' },
+          line: { color: tabIndex === 0 && calculation ? 'red' : 'gray', dash: 'dash' },
           showlegend: false
         },
         {
@@ -65,7 +66,7 @@ function ProductionPlot({ data, tabIndex }) {
           mode: 'lines',
           name: 'Phase II Line',
           legendgroup: "phases",
-          line: { color: tabIndex === 1 ? 'red' : 'gray', dash: 'dash' },
+          line: { color: tabIndex === 1 && calculation ? 'red' : 'gray', dash: 'dash' },
           showlegend: false
         },
         {
@@ -75,7 +76,7 @@ function ProductionPlot({ data, tabIndex }) {
           mode: 'lines',
           name: 'Phase III Line',
           legendgroup: "phases",
-          line: { color: tabIndex === 2 ? 'red' : 'gray', dash: 'dash' },
+          line: { color: (tabIndex === 2 && calculation) ? 'red' : 'gray', dash: 'dash' },
           showlegend: false
         },
         {
@@ -121,12 +122,15 @@ function ProductionPlot({ data, tabIndex }) {
             l: 50, // Left margin
             r: 50, // Right margin
             b: 50  // Bottom margin
-          }
+          },
+        autosize: true,
       }}
       config={{ displayModeBar: false }}
-      useResizeHandler
-      className="plot-container"
+      useResizeHandler = {true}
+      className='plot'
+      style={{ width: '100%', height: '100%' }}
     />
+    
   );
 }
 

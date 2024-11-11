@@ -1,6 +1,12 @@
-.plot-container {
-    height:600px;
-    width:65%;
+.full-width {
+    width:100%;
+    
+}
+
+.plot-div {
+    flex: 5; /* Take 3 parts of the available space */
+    height: 600px;
+    transition: flex 0.7s ease;
   }
 
 .slider {
@@ -15,11 +21,13 @@
 }
 
 .calculation {
-    width: 40%
+    flex: 3;
+    
 }
 
 .plot-phases{
-    display:flex
+    display:flex;
+    gap: 20px;
 }
 
 p {
@@ -39,3 +47,23 @@ h5 {
     text-decoration: underline;
     font-size:1rem;
 }
+
+.plot {
+    width:100%;
+}
+
+@media (max-width: 1200px) {
+    .plot-div {
+        height:600px;
+        width:100%;
+      }
+    
+    .calculation {
+        width:100%
+    }
+    .plot-phases{
+        display:flex;
+        flex-direction:column;
+        
+    }
+  }

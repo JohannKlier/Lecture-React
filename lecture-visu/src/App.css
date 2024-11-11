@@ -2,19 +2,35 @@
 /* App.css */
 
 .app {
-  display: flex;
+  display:flex;
   min-height: 100vh;
   background-color: #f4f6f8; /* Soft background color for the main app */
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:100%
+}
+
 .main-section {
   text-align: center; /* Center-align content within the main section */
+  width: 100%;
 }
 
 .main-section h1 {
   font-weight: 500;
   color: #333;
   margin-bottom: 1.5rem;
+}
+
+.paper-container {
+  padding-left:30px;
+  padding-right:30px;
+  width:100%;
+  max-width: 1200px;
+  margin-top: 80px;
 }
 
 /* Additional styling for the Paper container */
@@ -57,6 +73,11 @@ p {
   .MuiPaper-root {
     padding: 1rem;
   }
+
+  .paper-container {
+    padding:0;
+  }
+
 }
 
 /* App.css */
