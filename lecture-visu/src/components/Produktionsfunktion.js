@@ -9,7 +9,7 @@ import 'katex/dist/katex.min.css';
 
 const math = create(all);
 
-function Produktionsfunktion() {
+function Produktionsfunktion({id}) {
   const [a, setA] = useState(-2);
   const [b, setB] = useState(4);
   const [c, setC] = useState(2);
@@ -60,7 +60,7 @@ function Produktionsfunktion() {
   };
 
   return (
-    <div style={{ textAlign: 'center' }} id="Produktionsfunktion">
+    <div style={{ textAlign: 'center' }} id = {id}>
       <h2>Produktionsfunktion vom Typ A</h2>
       <BlockMath math={`x = a r^3 + b r^2 + c r`} />
       <BlockMath math={`x = ${a} r^3 + ${b} r^2 + ${c} r`} />
@@ -105,7 +105,7 @@ function Produktionsfunktion() {
                 <Tab label="Phase 3" />
               </Tabs>
               {tabIndex === 0 && (
-                <Box p={3} sx={{ textAlign: 'left' }}>
+                <Box p={3} sx={{ textAlign: 'left', paddingTop:"0px"}}>
                   <h5>Maximum der Grenzproduktivität</h5>
                   <p>Ertragskurve:</p>
                   <BlockMath math={`x = ${a} r^3 + ${b} r^2 + ${c} r`} />

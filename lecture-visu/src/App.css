@@ -15,17 +15,16 @@ main {
 }
 
 .main-section {
-  text-align: center; /* Center-align content within the main section */
+   /* Center-align content within the main section */
   width: 100%;
+  border-top: 1px solid #555;
+  padding-bottom: 30px;
 }
 
-.main-section h1 {
-  font-weight: 500;
-  color: #333;
-  margin-bottom: 1.5rem;
-}
+
 
 .paper-container {
+  
   padding-left:30px;
   padding-right:30px;
   width:100%;
@@ -50,15 +49,20 @@ main {
 
 /* Typography tweaks for a more polished look */
 h4 {
-  color: #444;
   font-size: 1.8rem;
   margin-top: 0;
 }
 
-p {
+p, h2, h3, h4, h5, h6 {
   color: #555;
-  line-height: 1.6;
-  font-size: 1rem;
+}
+
+h1, h2 {
+  font-family: 'Crimson Pro';
+}
+
+p {
+  line-height: 1;
 }
 
 /* Responsive Design for Smaller Screens */
@@ -90,4 +94,8 @@ p {
   text-align: center;
   font-weight: bold;
   position: relative;
+}
+
+.paper {
+  text-align: center;
 }

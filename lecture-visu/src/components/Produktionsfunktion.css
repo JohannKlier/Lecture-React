@@ -14,12 +14,6 @@
     width: 150px;
 }
 
-#Produktionsfunktion {
-  border-top:    1px solid  gray;
-  border-bottom: 3px solid gray;
-
-}
-
 .calculation {
     flex: 3;
     

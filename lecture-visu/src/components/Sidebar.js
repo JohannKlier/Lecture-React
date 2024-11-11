@@ -29,8 +29,8 @@ const StyledListItem = styled(ListItem)(({ theme }) => ({
 
 function Sidebar({ onSelectSection }) {
   const sections = [
-    { id: 'Produktionsfunktion', label: 'Produktionsfunktion' },
-    { id: 'visualization-two', label: 'Ablaufplanung' },
+    { id: 'section1', label: 'Produktionsfunktion' },
+    { id: 'section2', label: 'Ablaufplanung' },
     { id: 'visualization-three', label: 'Kostenfunktion' },
   ];
 
