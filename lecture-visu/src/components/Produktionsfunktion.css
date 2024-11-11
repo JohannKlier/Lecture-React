@@ -1,6 +1,6 @@
 .plot-container {
     height:600px;
-    width:100%;
+    width:65%;
   }
 
 .slider {
@@ -12,4 +12,30 @@
   border-top:    1px solid  gray;
   border-bottom: 3px solid gray;
 
+}
+
+.calculation {
+    width: 40%
+}
+
+.plot-phases{
+    display:flex
+}
+
+p {
+    margin-top:0.3rem;
+    margin-bottom: 0.4rem;
+}
+
+h5 {
+    margin-bottom:0px
+
+}
+
+.solution {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    font-size:1rem;
 }
