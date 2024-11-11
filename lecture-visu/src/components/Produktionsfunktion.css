@@ -5,7 +5,6 @@
 
 .plot-div {
     flex: 5; /* Take 3 parts of the available space */
-    height: 600px;
     transition: flex 0.7s ease;
   }
 
@@ -21,7 +20,6 @@
 
 .plot-phases{
     display:flex;
-    gap: 20px;
 }
 
 p {
@@ -44,12 +42,16 @@ h5 {
 
 .plot {
     width:100%;
+    height: 600px;
 }
 
+
 @media (max-width: 1200px) {
-    .plot-div {
-        height:600px;
-        width:100%;
+    .plot-phases {
+        display: block;
+    }
+    .plot {
+        height:450px;
       }
     
     .calculation {
@@ -60,4 +62,14 @@ h5 {
         flex-direction:column;
         
     }
+
   }
+
+@media (max-width: 960px) {
+.plot {
+    height:30vh;
+    width:100%;
+    }
+}
+
+  

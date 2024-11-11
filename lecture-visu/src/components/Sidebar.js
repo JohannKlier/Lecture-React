@@ -27,7 +27,7 @@ const StyledListItem = styled(ListItem)(({ theme }) => ({
   },
 }));
 
-function Sidebar({ onSelectSection }) {
+function Sidebar({ onSelectSection, className }) {
   const sections = [
     { id: 'section1', label: 'Produktionsfunktion' },
     { id: 'section2', label: 'Ablaufplanung' },
@@ -39,7 +39,7 @@ function Sidebar({ onSelectSection }) {
   };
 
   return (
-    <SidebarContainer variant="permanent" anchor="left">
+    <div className = {className}>
       <Toolbar>
         <Typography variant="h6" sx={{ color: '#fff', fontWeight: 'bold', ml: 2 }}>
           Visualizations
@@ -52,7 +52,7 @@ function Sidebar({ onSelectSection }) {
           </StyledListItem>
         ))}
       </List>
-    </SidebarContainer>
+    </div>
   );
 }
 

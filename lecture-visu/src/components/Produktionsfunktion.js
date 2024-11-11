@@ -108,17 +108,17 @@ function Produktionsfunktion({id}) {
                 <Box p={3} sx={{ textAlign: 'left', paddingTop:"0px"}}>
                   <h5>Maximum der Grenzproduktivität</h5>
                   <p>Ertragskurve:</p>
-                  <BlockMath math={`x = ${a} r^3 + ${b} r^2 + ${c} r`} />
+                  <p><BlockMath math={`x = ${a} r^3 + ${b} r^2 + ${c} r`} /></p>
                   <p>Grenzproduktivität:</p>
-                  <BlockMath math={`x' = \\frac{dx}{dr} = ${(3*a).toFixed(1)}r^2 + ${(2 * b).toFixed(1)} r + ${c}`} />
+                  <p><BlockMath math={`x' = \\frac{dx}{dr} = ${(3*a).toFixed(1)}r^2 + ${(2 * b).toFixed(1)} r + ${c}`} /></p>
                   <p>Notwendige Bedingung für ein Extremum</p>
-                  <BlockMath math={`x'' = \\frac{d^2x}{dr^2} = ${(6 * a).toFixed(1)} r + ${(2 * b).toFixed(1)}`} />
+                  <p><BlockMath math={`x'' = \\frac{d^2x}{dr^2} = ${(6 * a).toFixed(1)} r + ${(2 * b).toFixed(1)}`} /></p>
                   <p className="solution">r = {Math.round(data.x_values[0] * 100) / 100}</p>
                   <h5>Einsetzen in:</h5>
                   <p>Produktionsfunktion:</p>
-                  <BlockMath math={`x(r=${Math.round(data.x_values[0] * 100) / 100}) =  ${Math.round(data.x_values[1] * 100) / 100}`} />
+                  <p><BlockMath math={`x(r=${Math.round(data.x_values[0] * 100) / 100}) =  ${Math.round(data.x_values[1] * 100) / 100}`} /></p>
                   <p>Grenzproduktivität:</p>
-                  <BlockMath math={`x'(r=${Math.round(data.x_values[0] * 100) / 100}) = ${Math.round(data.x_values[1] * 100) / 100}`} />
+                  <p><BlockMath math={`x'(r=${Math.round(data.x_values[0] * 100) / 100}) = ${Math.round(data.x_values[1] * 100) / 100}`} /></p>
                 </Box>
               )}
               {tabIndex === 1 && (

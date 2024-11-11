@@ -118,17 +118,23 @@ function ProductionPlot({ data, tabIndex, calculation }) {
         yaxis: { title: 'Output', range: [data.y_axis[0], data.y_axis[1]] },
         showlegend: false,
         margin: {
-            t: 40,  // Set top margin to 0 to remove the extra space
-            l: 50, // Left margin
-            r: 50, // Right margin
-            b: 50  // Bottom margin
+            t: 10,  // Set top margin to 0 to remove the extra space
+            l: 30, // Left margin
+            r: 10, // Right margin
+            b: 40  // Bottom margin
           },
-        autosize: true,
+          dragMode: false,
+          autosize: true,
+          responsive: true,
+          
+          
+        
       }}
-      config={{ displayModeBar: false }}
+      config={{ displayModeBar: false, scrollZoom: false }}
       useResizeHandler = {true}
       className='plot'
-      style={{ width: '100%', height: '100%' }}
+      style={{ width: '100%'}}
+
     />
     
   );

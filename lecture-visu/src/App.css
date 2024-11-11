@@ -4,33 +4,26 @@
 .app {
   display:flex;
   min-height: 100vh;
-  background-color: #f4f6f8; /* Soft background color for the main app */
+  background-color: #f4f6f8;
+  margin-left: 240px /* Soft background color for the main app */
 }
 
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width:100%
+  width:100%;
+  
 }
 
 .main-section {
    /* Center-align content within the main section */
   width: 100%;
   border-top: 1px solid #555;
-  padding-bottom: 30px;
-}
-
-
-
-.paper-container {
+  padding: 30px 0;
   
-  padding-left:30px;
-  padding-right:30px;
-  width:100%;
-  max-width: 1200px;
-  margin-top: 80px;
 }
+
 
 /* Additional styling for the Paper container */
 .MuiPaper-root {
@@ -42,9 +35,14 @@ main {
 /* Sidebar-related styling for better distinction */
 .sidebar {
   width: 240px; /* Adjust as needed */
-  background-color: #3f51b5;
+  background-color: #171b3a;
   color: white;
-  padding: 20px;
+  position: fixed;
+  left: 0px; /* Start off-screen */
+  top: 0;
+  height: 100vh;
+  transition: left 0.3s ease; /* Smooth transition */
+  z-index:2
 }
 
 /* Typography tweaks for a more polished look */
@@ -63,27 +61,8 @@ h1, h2 {
 
 p {
   line-height: 1;
+  font-size: 16px;
 }
-
-/* Responsive Design for Smaller Screens */
-@media (max-width: 960px) {
-  .app {
-    flex-direction: column;
-  }
-  .sidebar {
-    width: 100%;
-    height: auto;
-  }
-  .MuiPaper-root {
-    padding: 1rem;
-  }
-
-  .paper-container {
-    padding:0;
-  }
-
-}
-
 /* App.css */
 
 .main-headline {
@@ -98,4 +77,63 @@ p {
 
 .paper {
   text-align: center;
+}
+
+.menu-button {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background-color:#1e1e2f;
+  color:white;
+  display:None;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+}
+
+.paper-container {
+  padding-left:30px;
+  padding-right:30px;
+  width:100%;
+  max-width: 1200px;
+  margin-top: 80px;
+  box-sizing: border-box;
+  
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 960px) {
+  .app {
+    flex-direction: column;
+    margin-left: 0px;
+    padding-left:0;
+  }
+  
+  .MuiPaper-root {
+    padding: 1rem;
+  }
+
+  .menu-button {
+    display: flex;
+    z-index: 10;
+  }
+
+  .sidebar {
+    left: -240px;
+    position:fixed;
+  }
+
+  .sidebar.active {
+    left:0;
+  }
+
+}
+
+@media (max-width: 1200px) {  
+  .paper-container {
+    padding:0;
+    margin-top: 0px;
+  }
 }
