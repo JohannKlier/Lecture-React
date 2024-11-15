@@ -32,30 +32,23 @@ main {
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Sidebar-related styling for better distinction */
-.sidebar {
-  width: 240px; /* Adjust as needed */
-  background-color: #171b3a;
-  color: white;
-  position: fixed;
-  left: 0px; /* Start off-screen */
-  top: 0;
-  height: 100vh;
-  transition: left 0.3s ease; /* Smooth transition */
-  z-index:2
-}
+
 
 /* Typography tweaks for a more polished look */
 h4 {
-  font-size: 1.8rem;
-  margin-top: 0;
+  font-size: 1rem;
+  margin:0;
+  margin-top:10px;
+}
+h5 {
+  font-weight: 600;
 }
 
 p, h2, h3, h4, h5, h6 {
   color: #555;
 }
 
-h1, h2 {
+h1{
   font-family: 'Crimson Pro';
 }
 
@@ -118,15 +111,6 @@ p {
   .menu-button {
     display: flex;
     z-index: 10;
-  }
-
-  .sidebar {
-    left: -240px;
-    position:fixed;
-  }
-
-  .sidebar.active {
-    left:0;
   }
 
 }

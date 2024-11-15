@@ -1,7 +1,8 @@
+// App.js
 import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
-import Produktionsfunktion from './components/Produktionsfunktion';
-import { Toolbar, Box, Container, Paper } from '@mui/material';
+import sections from './sections';
+import {Box, Paper} from '@mui/material'
 import './App.css';
 
 function App() {
@@ -9,19 +10,17 @@ function App() {
 
   const handleSectionSelect = (id) => {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-    setSidebarOpen(!sidebarOpen)
+    setSidebarOpen(false);
   };
 
   const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen); // Toggle the sidebar
+    setSidebarOpen(!sidebarOpen);
   };
 
   return (
     <div className="app">
-      {/* Toggle the 'active' class based on sidebarOpen state */}
-      <Sidebar onSelectSection={handleSectionSelect} className={sidebarOpen ? 'sidebar active' : 'sidebar'} />
+      <Sidebar sections={sections} onSelectSection={handleSectionSelect} active={sidebarOpen} />
       
-      {/* Menu button for mobile devices */}
       <div className="menu-button" onClick={toggleSidebar}>
         ☰
       </div>
@@ -30,12 +29,12 @@ function App() {
         <div className = "paper-container">
           <Paper elevation={3} sx={{ padding: 3, borderRadius: 2}} className="paper">
             <h1>Einführung in die Produktion</h1>
-            <div className="main-section">
-              <Produktionsfunktion id="section1" />
-            </div>
-            <div className="main-section">
-              <Produktionsfunktion id="section2" />
-            </div>
+              {sections.map((section) => (
+                <div className="main-section" id = {section.id}>
+                  {section.component}
+                </div>  
+              ))}
+            
           </Paper>
         </div>    
       </Box>

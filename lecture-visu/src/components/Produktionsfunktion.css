@@ -4,7 +4,7 @@
 }
 
 .plot-div {
-    flex: 5; /* Take 3 parts of the available space */
+    flex: 4; /* Take 3 parts of the available space */
     transition: flex 0.7s ease;
   }
 
@@ -14,8 +14,7 @@
 }
 
 .calculation {
-    flex: 3;
-    
+    flex: 3;  
 }
 
 .plot-phases{
